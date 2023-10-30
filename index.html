@@ -473,6 +473,8 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
+      
+      firebase.initializeApp(firebaseConfig);
    </script>
 <script>
     // Get references to modal elements
@@ -504,6 +506,8 @@
             .then(function(userCredential) {
                 // User signed in
                 var user = userCredential.user;
+                
+                alert("Successful login");
                 // You can redirect to a dashboard or perform other actions here
             })
             .catch(function(error) {
