@@ -531,6 +531,19 @@
               alert("Error: " + errorMessage);
           });
   });
+  
+  auth.onAuthStateChanged(function(user) {
+      if (user) {
+          // User is signed in
+          // You can access user information via the 'user' object
+          alert("Successful login");
+          console.log("User is authenticated");
+      } else {
+          // No user is signed in
+          alert("No user is currently logged in");
+          console.log("User is not authenticated");
+      }
+  });
 
   </script>
   
