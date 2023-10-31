@@ -471,9 +471,12 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
+      /*
+
       
       firebase.initializeApp(firebaseConfig);
-   </script>
+  */
+  </script>
 <script>
     // Get references to modal elements
     var loginModal = document.getElementById("loginModal");
@@ -499,8 +502,8 @@
         
         var email = emailInput.value;
         var password = passwordInput.value;
-
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        app.auth().signInWithEmailAndPassword(email, password)
+//        firebase.auth().signInWithEmailAndPassword(email, password)
             .then(function(userCredential) {
                 // User signed in
                 var user = userCredential.user;
