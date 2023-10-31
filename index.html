@@ -408,6 +408,8 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=SoftLand
           -->
+            <button id="logoutButton">Logout</button>
+
             <button id="openLoginModal">Login</button>
             <br><br>
              <!-- Login Modal -->
@@ -492,6 +494,7 @@
     var emailInput = document.getElementById("email");
     var passwordInput = document.getElementById("password");
     var loginButton = document.getElementById("loginButton");
+    var logoutButton =document.getElementById("logoutButton");
 
     // Event listeners to open and close the modal
     openLoginModalButton.addEventListener("click", function() {
@@ -536,11 +539,17 @@
       if (user) {
           // User is signed in
           // You can access user information via the 'user' object
-          alert("Successful login");
+          //alert("Successful login");
+          logoutButton.style.display = "block";
+          loginButton.style.display = "none";
+          openLoginModalButton.style.display = "none";
           console.log("User is authenticated");
       } else {
           // No user is signed in
-          alert("No user is currently logged in");
+          //alert("No user is currently logged in");
+          logoutButton.style.display = "none";
+          loginButton.style.display = "block";
+          openLoginModalButton.style.display = "block";
           console.log("User is not authenticated");
       }
   });
