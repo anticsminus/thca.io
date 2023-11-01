@@ -483,9 +483,6 @@
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     
-    //firebase.initializeApp(firebaseConfig);
-    
-    
     // Get references to modal elements
     var loginModal = document.getElementById("loginModal");
     var openLoginModalButton = document.getElementById("openLoginModal");
@@ -504,10 +501,6 @@
     closeLoginModalButton.addEventListener("click", function() {
         loginModal.style.display = "none";
     });
-  
-
-  // Initialize Firebase (this part remains the same)
-  // ...
 
   // Get a reference to the authentication service
   const auth = getAuth(app);
@@ -552,6 +545,18 @@
           openLoginModalButton.style.display = "block";
           console.log("User is not authenticated");
       }
+  });
+  
+  logoutButton.addEventListener("click", function() {
+      firebase.auth().signOut()
+          .then(function() {
+              // Sign-out successful
+              console.log("User has been logged out");
+          })
+          .catch(function(error) {
+              // An error happened
+              console.error("Error logging out: ", error);
+          });
   });
 
   </script>
