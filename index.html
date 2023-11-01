@@ -548,9 +548,10 @@
   });
   
   logoutButton.addEventListener("click", function() {
-      firebase.auth().signOut()
+      auth.signOut()
           .then(function() {
               // Sign-out successful
+              alert("Logged out");
               console.log("User has been logged out");
           })
           .catch(function(error) {
