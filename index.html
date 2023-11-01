@@ -410,9 +410,9 @@
           -->
             <center>
                 <button id="logoutButton">Logout</button>
+                <button id="openLoginModal">Login</button>
             </center>
             
-            <button id="openLoginModal">Login</button>
             
             <br><br>
              <!-- Login Modal -->
@@ -538,6 +538,7 @@
           logoutButton.style.display = "block";
           loginButton.style.display = "none";
           openLoginModalButton.style.display = "none";
+          loginModal.style.display = "none";
           console.log("User is authenticated");
       } else {
           // No user is signed in
